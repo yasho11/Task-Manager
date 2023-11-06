@@ -51,3 +51,29 @@ function showMessage($message, $type = 'success') {
     echo '<div class="' . $messageClass . '">' . $message . '</div>';
 }
 ?>
+<?php
+function userLogin() {
+    global $conn;
+    if (isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $email = filter_var($email, FILTER_SANITIZE_STRING);
+        $pass = md5($_POST['pass']);
+        $pass = filter_var($pass, FILTER_SANITIZE_STRING);
+
+        $sql = "SELECT * FROM `users` WHERE email = ? AND password = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$email, $pass]);
+        $rowCount = $stmt->rowCount();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($rowCount > 0) {
+            $_SESSION['user_id'] = $row['id'];
+            return true; // Login successful
+        } else {
+            return false; // Login failed
+        }
+    }
+}
+//header('location: home.php?login=success');
+?>

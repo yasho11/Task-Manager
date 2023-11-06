@@ -1,6 +1,6 @@
 <?php
 
-include "function.php";
+include "Backend/function.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
@@ -40,9 +40,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 <title>Register Now</title>
 
-    
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <section class="h-100 gradient-form" style="background-color: #eee;">
@@ -55,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="card-body p-md-5 mx-md-4">
 
                 <div class="text-center">
-                  <img src="logo.png"
+                  <img src="images/logo.png"
                     style="width: 80px; height: 80px;" alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Sort It: More than a Website, Your Task Mastery Partner!"</h4>
                 </div>
